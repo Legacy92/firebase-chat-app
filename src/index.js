@@ -7,7 +7,8 @@ import rootReducer from './reducers';
 
 import App from './components/app';
 
-const store = createStore(rootReducer, {}, applyMiddleware())
+const store = createStore(rootReducer, {}, applyMiddleware());
+
 ReactDOM.render(
     <Provider store={store}>
         <Router>
