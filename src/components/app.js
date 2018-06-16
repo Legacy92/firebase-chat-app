@@ -5,6 +5,7 @@ import Nav from './nav';
 import Home from './home';
 import Chat from './chat';
 import CreateChatRoom from './create_chat_room';
+import ChatRooms from './chat_rooms';
 
 
 const App = () => (
@@ -14,6 +15,7 @@ const App = () => (
             <Route exact path='/' component={Home} />
             <Route path='/chat/:id' component={Chat} />
             <Route path='/create-room' component={CreateChatRoom}/>
+            <Route path='/chat-rooms' component={ChatRooms}/>
         </div>
     </div>
 );
