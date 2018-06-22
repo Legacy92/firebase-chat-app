@@ -8,14 +8,14 @@ import { updateChat } from '../actions';
 class Chat extends Component {
     componentDidMount() {
         const { id } = this.props.match.params
-        db.ref(`/chat-rooms/${id}`).on('value', (snapshot) => {
+        db.ref(`/chat-logs/${id}`).on('value', (snapshot) => {
             this.props.updateChat(snapshot.val());
         });
     }
     render() {
         const { chatLog, roomName, match: { params } } = this.props;
 
-        const chatElements = Object.keys(chatLog).map((key, index) => {
+        const chatElements = Object.keys(chatLog || {}).map((key, index) => {
             const { name, message } = chatLog[key];
             return <li className='collection-item' key={key}><b>{name}:</b>{message}</li>
         })
